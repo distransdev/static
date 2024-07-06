@@ -95,12 +95,13 @@
 
   @keyframes pan-image {
     0% {
-        background-position: bottom left;
+        background-position: 0% 100%;
+        background-size: 100%;
     }
     100% {
-        background-position: top right;
-        background-size: 400%;
-      }
+        background-position: 100% 0%;
+        background-size: 200%;
+    }
   }
   
   .screen > .screen-image {
@@ -115,7 +116,7 @@
     animation: pan-image 60s linear infinite;
   }
   
-  .screen > .screen-content {
+  /* .screen > .screen-content {
     justify-content: flex-end;
     flex-grow: 1;
     gap: 4rem;
@@ -124,7 +125,7 @@
     padding-bottom: 6rem;
     border: 1px solid rgb(var(--primary-rgb) / 50%);
     border-radius: 0.6rem;
-  }
+  } */
   
   #credits {
     display: flex;
