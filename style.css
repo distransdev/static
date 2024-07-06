@@ -95,7 +95,7 @@
 
   @keyframes pan-image {
     0% {
-        background-position: 0% 0%;
+        background-position: bottom left;
     }
     100% {
         background-position: top right;
