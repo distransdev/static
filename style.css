@@ -1,0 +1,139 @@
+:root {
+    --background-rgb: 2 30 46;
+    --randomX: random(100);
+    --randomY: random(100)
+    
+    --fire-rgb: 240 127 17;
+    --star-rgb: 236 219 195;
+    --primary-rgb: var(--star-rgb);
+  }
+
+  @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
+  p {
+    padding: 0px;
+    margin: 0px;
+  }
+  a {
+    color: rgb(var(--star-rgb));;
+    text-decoration: none;
+  }
+
+  .jetbrains-mono-credits {
+    font-family: "JetBrains Mono", monospace;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    color: rgb(var(--star-rgb));
+    text-decoration: none;
+    letter-spacing: 2px;
+    font-size: 8px;
+    font-weight: 400;
+  }
+
+  .jetbrains-mono-header {
+    font-family: "JetBrains Mono", monospace;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: italic;
+    color: rgb(var(--star-rgb));
+    text-decoration: none;
+    letter-spacing: 2px;
+    font-size: 40px;
+    font-weight: 400;
+  }
+
+  .toprow {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    gap: 0;
+    position: absolute;
+    bottom: 20%;
+    z-index: 20;
+  }
+
+
+  * {
+    box-sizing: border-box;
+  }
+  
+  body {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: rgb(var(--background-rgb));
+    overflow-x: hidden;
+    overflow-y: hidden;
+  }
+
+  .screen {
+    height: 80%;
+    width: 100%;
+    max-width: 1024px;
+    display: flex;
+    overflow: hidden;
+    position: static;
+    z-index: 10;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .screen-overlay {
+    display: flex;
+    background-image: url(/masked.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+  }
+
+  @keyframes pan-image {
+    0% {
+        background-position: 0% 0%;
+    }
+    100% {
+        background-position: top right;
+        background-size: 400%;
+      }
+  }
+  
+  .screen > .screen-image {
+    background-repeat: no-repeat;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    background-size: 300%;
+    background-position: 0% 0%;
+    animation: pan-image 60s linear infinite;
+  }
+  
+  .screen > .screen-content {
+    justify-content: flex-end;
+    flex-grow: 1;
+    gap: 4rem;
+    position: relative;
+    z-index: 3;
+    padding-bottom: 6rem;
+    border: 1px solid rgb(var(--primary-rgb) / 50%);
+    border-radius: 0.6rem;
+  }
+  
+  #credits {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 100%;
+    gap: 0;
+    position: absolute;
+    bottom: 10px;
+    left: 20px;
+    z-index: 10;
+  }
